@@ -1,0 +1,23 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+        width: 200px
+    description:
+        label: Description
+        type: text
+    created_at:
+        label: Created
+        type: datetime
+        width: 200px
+    updated_at:
+        label: Updated
+        type: datetime
+        width: 200px
+    total_events:
+        label: Events
+        type: number
+        width: 150px
+        sortable: false

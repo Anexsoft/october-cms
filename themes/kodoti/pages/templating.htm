@@ -1,0 +1,70 @@
+title = "Templating"
+url = "/templating"
+layout = "layout"
+description = "Ejemplo de manipulación del contenido a renderizar."
+is_hidden = 0
+==
+<?php
+function onStart () {
+    $this['isEarly'] = date('H') >= 9 && date('H') <= 12;
+    $this['fruits'] = ['banana', 'orange', 'apple'];
+}
+?>
+==
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Templating
+      </h1>
+      <h2 class="subtitle">
+          Ejemplo de manipulación del contenido a visualizar
+      </h2>
+      
+      <div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container content">
+          <h3>Ejemplo de condiciones</h3>
+          <p>
+            {% if isEarly %}
+                Estamos en la mañana
+            {% else %}
+                Estamos en la tarde
+            {% endif %}
+          </p>
+          
+          <h3>Ejemplo de condiciones abreviadas</h3>
+          <p>
+            {{ isEarly ? 'Estamos en la mañana' : 'Estamos en la tarde' }}
+          </p>
+          
+          <h3>Concatenación</h3>
+          <p>
+            {{ 'Estamos en la ' ~ (isEarly ? 'mañana' : 'tarde') }}
+          </p>
+          
+          <h3>Iteraciones</h3>
+          <ul>
+              {% for item in fruits %}
+                  <li>{{item}}</li>
+              {% else %}
+                  <li><em>No se han encontrado frutas</em></li>
+              {% endfor %}          
+          </ul>
+          
+          <h4>Funciones > STR</h4>
+          
+          <h5>Camel case</h5>
+          <p>{{ str_camel('hola kodoti') }}</p>
+          
+          <h5>Snake case</h5>
+          <p>{{ str_snake('hola kodoti', '-') }}</p>
+          
+          <h4>Funciones > HTML</h4>
+          {{ html_limit('<p>Post content...</p>', 2) }}         
+</section>

@@ -1,0 +1,26 @@
+columns:
+    category:
+        label: Category
+        type: text
+        relation: category
+        width: 120px
+        valueFrom: title
+    title:
+        label: title
+        type: text
+    date:
+        label: date
+        type: datetime
+        width: 200px
+    location:
+        label: location
+        type: text
+        width: 250px
+    created_at:
+        label: Created
+        type: datetime
+        width: 200px
+    updated_at:
+        label: Updated
+        type: datetime
+        width: 200px

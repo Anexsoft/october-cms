@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table kodoti_events_categories'
+    - builder_table_create_kodoti_events_categories.php
+1.0.3:
+    - 'Updated table kodoti_events_categories'
+    - builder_table_update_kodoti_events_categories.php
+1.0.4:
+    - 'Created table kodoti_events_events'
+    - builder_table_create_kodoti_events_events.php
+1.0.5:
+    - 'Updated table kodoti_events_events'
+    - builder_table_update_kodoti_events_events.php
+1.0.6:
+    - 'Updated table kodoti_events_events'
+    - builder_table_update_kodoti_events_events_2.php
+1.0.7:
+    - 'Created table kodoti_events_subscribers'
+    - builder_table_create_kodoti_events_subscribers.php

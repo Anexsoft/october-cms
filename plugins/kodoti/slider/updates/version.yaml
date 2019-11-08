@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table kodoti_slider_pictures'
+    - builder_table_create_kodoti_slider_pictures.php
+1.0.3:
+    - 'Updated table kodoti_slider_pictures'
+    - builder_table_update_kodoti_slider_pictures.php

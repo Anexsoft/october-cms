@@ -1,0 +1,11 @@
+plugin:
+    name: 'kodoti.slider::lang.plugin.name'
+    description: 'Galería de imágenes para Kodoti Event.'
+    author: kodoti
+    icon: oc-icon-image
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Galleries
+        url: kodoti/slider/galery
+        icon: icon-picture-o

@@ -1,0 +1,24 @@
+plugin:
+    name: 'kodoti.events::lang.plugin.name'
+    description: 'kodoti.events::lang.plugin.description'
+    author: kodoti
+    icon: oc-icon-calendar
+    homepage: 'https://kodoti.com'
+navigation:
+    main-menu-item:
+        label: Events
+        url: kodoti/events/event
+        icon: icon-calendar
+        sideMenu:
+            side-menu-item2:
+                label: Events
+                url: kodoti/events/event
+                icon: icon-list
+            side-menu-item:
+                label: Categories
+                url: kodoti/events/category
+                icon: icon-tags
+            side-menu-item3:
+                label: Subscribers
+                url: kodoti/events/subscriber
+                icon: icon-users

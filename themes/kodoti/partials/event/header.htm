@@ -1,0 +1,28 @@
+description = "Event header page"
+==
+<section style="background-image:url({{('assets/images/' ~ background_image)|theme}});background-position:center center;background-size:100%;" class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-primary">
+        {{record.title}}
+      </h1>
+      <h2 class="subtitle">
+        {{record.description}}
+      </h2>
+      
+      <div>
+        <span class="icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </span>
+        <span><b>Ubicación</b>: {{record.location}}</span>
+      </div>
+      
+      <div>
+        <span class="icon">
+            <i class="fas fa-clock"></i>
+        </span>
+        <span><b>Fecha</b>: {{record.date|date('Y-m-d H:i')}}</span>
+      </div>
+    </div>
+  </div>
+</section>

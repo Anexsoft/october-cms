@@ -1,0 +1,23 @@
+fields:
+    fullname:
+        label: 'Full name'
+        span: auto
+        required: 1
+        type: text
+    email:
+        label: Email
+        span: auto
+        required: 1
+        type: text
+    event:
+        label: Evente
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    document:
+        label: Document
+        span: auto
+        required: 1
+        type: text

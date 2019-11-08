@@ -1,0 +1,81 @@
+title = "Contacto"
+url = "/contacto"
+layout = "layout"
+description = "Pongámonos en contacto."
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+    // $this->addJs('assets/js/contact.js');
+}
+
+function onContactSubmit() {
+    $this['name'] = input('name');
+    
+    // Es retornado como un Json
+    /* return [
+        'name' => input('name')
+    ];*/
+}
+?>
+==
+<section class="hero is-primary is-bold is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Mantengamos el contacto
+      </h1>
+      <h2 class="subtitle">
+        Si te gustaría ponerte en contacto con nosotros por favor rellene el siguiente formulario.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+    <div id="contact-result" class="container">
+    
+        <form data-request="onContactSubmit" data-request-update="'contact/success': '#contact-result'">
+            <div class="field">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input required name="name" class="input" type="text" placeholder="Ingrese su nombre">
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input required name="email" class="input" type="email" placeholder="Ingrese su correo" value="">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Mensaje</label>
+              <div class="control">
+                <textarea required name="message" class="textarea" placeholder="Ingrese un mensaje"></textarea>
+              </div>
+            </div>
+            
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit" id="btn-enviar" class="button is-link">Enviar</button>
+              </div>
+              <div class="control">
+                <button type="reset" class="button is-link is-light">Cancelar</button>
+              </div>
+            </div>        
+        </form>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+    function contactSuccess(result) {
+        $('#contact-result').html(`<b>${result.name}</b> se ha procesado su información correctamente ..`);
+    }
+</script>
+{% endput %}

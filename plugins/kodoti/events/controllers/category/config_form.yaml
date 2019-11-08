@@ -1,0 +1,10 @@
+name: Category
+form: $/kodoti/events/models/category/fields.yaml
+modelClass: Kodoti\Events\Models\Category
+defaultRedirect: kodoti/events/category
+create:
+    redirect: 'kodoti/events/category/update/:id'
+    redirectClose: kodoti/events/category
+update:
+    redirect: kodoti/events/category
+    redirectClose: kodoti/events/category

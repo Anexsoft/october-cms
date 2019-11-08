@@ -1,0 +1,42 @@
+title = "Categories"
+url = "/:category_id/:slug"
+layout = "layout"
+is_hidden = 0
+
+[event]
+columns = 4
+category = "{{ :category_id }}"
+==
+<?php
+use Kodoti\Events\Models\Category;
+
+function onStart()
+{
+    // Get record from DB
+    $slug = $this->param('slug');    
+    $this['record'] = Category::Where('slug', $slug)->first();
+    
+    // Set title and meta
+    $this->page->title = $this['record']->title;
+    $this->page->description = $this['record']->description;
+}
+?>
+==
+<section class="hero is-primary is-bold is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{record.title}}
+      </h1>
+      <h2 class="subtitle">
+        {{record.description}}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% component 'event' %}    
+    </div>
+</section>

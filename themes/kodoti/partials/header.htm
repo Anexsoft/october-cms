@@ -1,0 +1,43 @@
+==
+<?php
+use Kodoti\Events\Models\Category;
+
+function onStart()
+{
+    // Get record from DB
+    $slug = $this->param('slug');    
+    $this['records'] = Category::get();
+}
+?>
+==
+<div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{{'/'|app}}">
+          <img src="{{ 'assets/images/logo.png'|theme }}" />
+        </a>
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            {% for item in records %}
+              <a href="{{(item.id ~ '/' ~ item.slug)|app}}" class="navbar-item">
+                {{item.title}}
+              </a>          
+            {% endfor %}
+            
+          <a href="{{'acerca-de-nosotros'|page}}" class="navbar-item">Acerca de nosotros</a>
+    
+          <a href="{{'contacto'|page}}" class="navbar-item">
+            Contacto
+          </a>
+        </div>
+      </div>
+    </nav>
+</div>

@@ -1,0 +1,27 @@
+description = "Right content."
+==
+<div id="subscription-result">
+    <form data-request="onSubscriptionSubmit" data-request-update="'event/success': '#subscription-result'">
+        <input type="hidden" name="event_id" value="{{record.id}}" />
+        <div class="box">
+            <div class="field">
+              <div class="contro">
+                <input required class="input" type="email" name="email" placeholder="Ingrese su correo" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input required class="input" type="text" name="document" placeholder="Documento" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input required class="input" type="text" name="fullname" placeholder="Nombre completo" />
+              </div>
+            </div>
+            <div class="field">
+              <button type="submit" class="button is-info is-fullwidth">Suscribirse</button>
+            </div>
+        </div>
+    </form>
+</div>

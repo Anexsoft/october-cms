@@ -1,0 +1,10 @@
+name: Event
+form: $/kodoti/events/models/event/fields.yaml
+modelClass: Kodoti\Events\Models\Event
+defaultRedirect: kodoti/events/event
+create:
+    redirect: 'kodoti/events/event/update/:id'
+    redirectClose: kodoti/events/event
+update:
+    redirect: kodoti/events/event
+    redirectClose: kodoti/events/event

@@ -1,0 +1,31 @@
+description = "Esqueleto de la web."
+==
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.description }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+    {% styles %}
+  </head>
+  <body>
+      {% partial 'header' %}
+      
+      {% page %}
+      
+      {% partial 'footer' %}
+      
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  
+      {% framework extras %}
+  
+      {% scripts %}
+  </body>
+</html>

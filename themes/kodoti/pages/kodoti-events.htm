@@ -1,0 +1,56 @@
+title = "KODOTI Events"
+url = "/"
+layout = "layout"
+description = "Tu página más popular de eventos sociales."
+is_hidden = 0
+
+[event]
+columns = 4
+==
+<?php
+use Kodoti\Slider\Models\Galery;
+
+function onStart() {
+    $this['gallery'] = Galery::where('code', 'HOME-SLIDER')->first();
+}
+?>
+==
+<div id="lightSlider">
+    {% for item in gallery.items %}
+      <div class="hero is-dark is-large" style="background:url('{{item.image|media}}');background-size:100%;background-position:center center;">
+          <div class="hero-body container content has-text-centered">
+              <div>
+                  <span class="tag is-large is-dark">
+                      {{item.description}}
+                  </span>
+              </div>
+              <hr>
+              <a class="button is-info" href="{{item.url|app}}">Más detalle del evento</a>
+          </div>
+      </div>
+    {% endfor %}
+</div>
+
+<section class="section">
+    <div class="container">
+        {% component 'event' %}    
+    </div>
+</section>
+
+{% put styles %}
+<link rel="stylesheet" type="text/css" href="{{'assets/js/lightslider/css/lightslider.css'|theme}}"/>
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript" src="{{'assets/js/lightslider/js/lightslider.js'|theme}}"></script>
+<script>
+    $(document).ready(function() {
+        $('#lightSlider').lightSlider({
+            adaptiveHeight:true,
+            item:1,
+            slideMargin:0,
+            loop:true
+        });
+    });
+</script>
+{% endput %}

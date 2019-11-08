@@ -1,0 +1,82 @@
+title = "Event"
+url = "/:slug"
+layout = "layout"
+is_hidden = 0
+==
+<?php
+use Kodoti\Events\Models\Event;
+use Kodoti\Events\Models\Subscriber;
+
+function onStart()
+{
+    // Get record from DB
+    $slug = $this->param('slug');    
+    $this['record'] = Event::Where('slug', $slug)->first();
+    
+    // Set title and meta
+    $this->page->title = $this['record']->title;
+    $this->page->description = $this['record']->description;
+    
+    // Set background header
+    $this->setHeaderBackground();
+}
+
+function setHeaderBackground()
+{
+    $category = $this['record']->category_id;
+    
+    // Tech
+    if($category === 2) 
+    {
+        $this['background_image'] = 'tech-event.jpg';
+    }
+    
+    // Tech
+    if($category === 4) 
+    {
+        $this['background_image'] = 'social-event.jpg';
+    }
+    
+    // Sports
+    if($category === 3) 
+    {
+        $this['background_image'] = 'sports-event.jpg';
+    }
+    
+    // Help
+    if($category === 5) 
+    {
+        $this['background_image'] = 'help-event.jpg';
+    }
+}
+
+function onSubscriptionSubmit() 
+{
+    $record = new Subscriber();
+    
+    $record->event_id = post('event_id');
+    $record->fullname = post('fullname');
+    $record->email = post('email');
+    $record->document = post('document');
+    
+    $record->save();
+}
+?>
+==
+{% partial 'event/header' %}
+
+<section class="section">
+    <div class="container content">
+    
+        <div class="columns">
+            <div class="column">
+                {% partial 'event/content' %}
+            </div>
+            
+            <div class="column is-3">
+                {% partial 'event/form' %}
+            </div>
+        </div>
+        
+    </div>
+</section>

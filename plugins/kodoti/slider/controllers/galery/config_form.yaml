@@ -1,0 +1,10 @@
+name: Galery
+form: $/kodoti/slider/models/galery/fields.yaml
+modelClass: Kodoti\Slider\Models\Galery
+defaultRedirect: kodoti/slider/galery
+create:
+    redirect: 'kodoti/slider/galery/update/:id'
+    redirectClose: kodoti/slider/galery
+update:
+    redirect: kodoti/slider/galery
+    redirectClose: kodoti/slider/galery

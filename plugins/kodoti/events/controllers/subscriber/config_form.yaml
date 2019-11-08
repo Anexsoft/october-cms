@@ -1,0 +1,10 @@
+name: Subscriber
+form: $/kodoti/events/models/subscriber/fields.yaml
+modelClass: Kodoti\Events\Models\Subscriber
+defaultRedirect: kodoti/events/subscriber
+create:
+    redirect: 'kodoti/events/subscriber/update/:id'
+    redirectClose: kodoti/events/subscriber
+update:
+    redirect: kodoti/events/subscriber
+    redirectClose: kodoti/events/subscriber

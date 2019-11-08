@@ -1,0 +1,12 @@
+list: $/kodoti/events/models/subscriber/columns.yaml
+modelClass: Kodoti\Events\Models\Subscriber
+title: Subscriber
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'kodoti/events/subscriber/update/:id'

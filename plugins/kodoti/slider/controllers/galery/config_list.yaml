@@ -1,0 +1,12 @@
+list: $/kodoti/slider/models/galery/columns.yaml
+modelClass: Kodoti\Slider\Models\Galery
+title: Galery
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'kodoti/slider/galery/update/:id'

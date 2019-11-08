@@ -1,0 +1,41 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    code:
+        label: Code
+        span: auto
+        required: 1
+        type: text
+tabs:
+    fields:
+        items:
+            label: Images
+            prompt: 'Add new image'
+            maxItems: '5'
+            span: full
+            context:
+                - update
+                - preview
+            type: repeater
+            tab: Pictures
+            form:
+                fields:
+                    description:
+                        label: Description
+                        span: full
+                        required: 1
+                        type: text
+                    url:
+                        label: Url
+                        span: full
+                        required: 1
+                        type: text
+                    image:
+                        label: Image
+                        mode: image
+                        span: auto
+                        required: 1
+                        type: mediafinder
